@@ -1,0 +1,18 @@
+<div class="card text-center animated fadeIn fast">
+  <div class="card-body">
+    <h2 class="card-title">{{ hero.nombre | uppercase }} <small>({{ hero.aparicion | date:'y' }})</small> </h2>
+  </div>
+  <div class="card-header">
+    <img [src]="hero.img" [alt]="hero.nombre">
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{ hero.bio }}</p>
+  </div>
+  <div class="card-footer text-muted">
+      <img *ngIf="hero.casa == 'DC'" class="image-logo" src="assets/image/dc_logo.jpg" alt="DC">   
+      <img *ngIf="hero.casa == 'Marvel'" class="image-logo" src="assets/image/marvel_logo.jpg" alt="Marvel">   
+  </div>
+  <div class="card-header">
+    <a [routerLink]="[ '/heroes' ]" class="btn btn-primary">Go back</a>
+  </div>
+</div>

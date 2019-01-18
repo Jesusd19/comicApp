@@ -1,0 +1,20 @@
+ <h2>Heroes: <small>Marvel and DC</small></h2>
+<hr>
+
+<div *ngIf="heros.length===0" class="alert alert-danger">
+  There are no results with the term: {{ heroSearch }}
+</div>
+<div class="card-columns" >
+  <div class="card animated fadeIn fast" *ngFor="let hero of heros">
+    <img [src]="hero.img" class="card-img-top" [alt]="hero.nombre">
+    <div class="card-body">
+      <h5 class="card-title"> {{ hero.nombre }}</h5>
+      <p class="card-text">{{ hero.bio }}</p>
+      <p class="card-text"><small class="text-muted">First appearance in {{ hero.aparicion }} </small></p>
+      <button (click)="verHero(hero.id)" type="button" class="btn btn-outline-primary btn-block">
+        See more...
+      </button>
+      <!-- <a [routerLink]="[ '/hero', i ]" class="btn btn-outline-primary">See more link...</a> -->
+    </div>
+  </div>
+</div>
